@@ -58,6 +58,7 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
+    in_subdir = false
     url = "https://github.com/givanz/Vvveb/releases/download/1.0.6/latest.zip"
     sha256 = "6a2a5704b060138d52b1487b527b6d5fda0c308fc906cb9e8488219d420c45c0"
 
