@@ -14,9 +14,7 @@ maintainers = ["eric_G"]
 [upstream]
 license = "AGPL-3.0"
 website = "https://www.vvveb.com/"
-demo = "https://demo.example.com"
 admindoc = "https://docs.vvveb.com/installation"
-userdoc = "https://yunohost.org/apps"
 code = "https://github.com/givanz/Vvveb"
 
 [integration]

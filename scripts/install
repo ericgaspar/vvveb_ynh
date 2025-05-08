@@ -27,7 +27,7 @@ ynh_setup_source --dest_dir="$install_dir"
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+#ynh_script_progression "Adding $app's configuration files..."
 
 #ynh_config_add --template="env.php" --destination="$install_dir/env.php"
 
@@ -43,26 +43,13 @@ ynh_config_add_phpfpm
 ynh_config_add_nginx
 
 #=================================================
-# FINAL BOOKSTACK INSTALL
+# FINAL INSTALL
 #=================================================
-ynh_script_progression "Install $app"
+ynh_script_progression "Set $app admin and database"
 
 pushd $install_dir
 	php$php_version cli.php install module=index host=127.0.0.1 user=$db_user password=$db_pwd database=$db_name admin[email]=$email admin[password]=$password
 popd
-
-#=================================================
-# SETUP APPLICATION WITH CURL
-#=================================================
-
-### Use these lines only if the app installation needs to be finalized through
-### web forms. We generally don't want to ask the final user,
-### so we're going to use curl to automatically fill the fields and submit the
-### forms.
-
-# Installation with curl
-#ynh_script_progression "Finalizing installation..."
-#ynh_local_curl "/INSTALL_PATH" "key1=value1" "key2=value2" "key3=value3"
 
 #=================================================
 # END OF SCRIPT
